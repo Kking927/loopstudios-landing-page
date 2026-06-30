@@ -585,6 +585,7 @@ h1 {
   }
 
   .intro__content {
+    background-color: var(--color-white);
     grid-column: 7 / -1;
     grid-row: 1;
     padding-top: var(--pad-intro-content-t);
