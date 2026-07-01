@@ -52,8 +52,8 @@
   --gap-container-y: clamp(1rem, 1vw + 0.75rem, 1.5rem);
   --gap-container-x: clamp(1.5rem, 5vw + 0.25rem, 3.75rem);
   --gap-intro-container: clamp(3rem, 6vw + 1.5rem, 6rem);
-  --gap-creations-container: clamp(2.5rem, 4vw + 1.5rem, 4.5rem);
-  --gap-creations-grid: clamp(1.5rem, 2vw + 1rem, 1.75rem);
+  --gap-creations-container: clamp(1.5rem, 3vw + 1rem, 3rem);
+  --gap-creations-grid: clamp(1rem, 2vw + 0.5rem, 1.5rem);
   --gap-footer-container: clamp(3rem, 5vw + 2rem, 5rem);
   --gap-footer-left: clamp(2rem, 3vw + 1rem, 3rem);
   --gap-footer-nav: clamp(1.5rem, 2vw + 1rem, 2rem);
@@ -66,10 +66,10 @@
   --pad-creation-title-l: clamp(1.25rem, 2vw + 0.75rem, 2rem);
   --pad-creation-btn-y: clamp(0.4rem, 1vw + 0.2rem, 0.5rem);
   --pad-creation-btn-x: clamp(1.25rem, 2vw + 0.5rem, 1.875rem);
-  --pad-footer-y: clamp(3.5rem, 6vw + 2rem, 3.125rem);
+  --pad-footer-y: clamp(2rem, 4vw + 1rem, 3rem);
 
   /* Header Dimension Variables */
-  --header-height-min: clamp(28rem, 30vw + 15rem, 31.25rem);
+  --header-height-min: clamp(22rem, 25vw + 12rem, 26rem);
 
   /* Effects & Transitions */
   --transition-speed: 0.2s;
@@ -148,7 +148,7 @@ li {
 
 .container {
   width: 100%;
-  max-width: 65rem;
+  max-width: 66rem;
   margin: 0 auto;
   padding: var(--gap-container-y) var(--gap-container-x);
   box-sizing: border-box;
@@ -391,6 +391,7 @@ h1 {
   cursor: pointer;
   overflow: hidden;
   width: 100%;
+  aspect-ratio: 2 / 3;
 }
 
 .creations__card::after {
@@ -466,7 +467,7 @@ h1 {
   background-color: var(--color-black);
   color: var(--color-white);
   width: 100%;
-  max-width: 65rem;
+  max-width: 66rem;
   margin-inline: auto;
 }
 
