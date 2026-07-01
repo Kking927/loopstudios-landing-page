@@ -36,7 +36,7 @@
   --size-button: clamp(0.75rem, 0.3vw + 0.6rem, 0.75rem);
   --size-title: clamp(1.5rem, 4vw + 1rem, 3.5rem);
   --size-heading: clamp(1.5rem, 2vw + 1rem, 2.5rem);
-  --size-footer-link: clamp(0.875rem, 0.2vw + 0.8rem, 0.938rem);
+  --size-footer-link: clamp(0.75rem, 0.2vw + 0.7rem, 0.85rem);
 
   /* Font Families */
   --ff-alata: "Alata", sans-serif;
@@ -488,7 +488,7 @@ h1 {
 }
 
 .footer__logo {
-  width: 9rem;
+  width: 7.5rem;
   height: auto;
   display: block;
 }
@@ -556,8 +556,14 @@ h1 {
   transition: var(--transition-social-border);
 }
 
-.footer__social-link:hover::after {
+.footer__social-link:hover::after,
+.footer__social-link:focus-visible::after {
   transform: scaleX(1);
+}
+
+.footer__social-link img {
+  width: 1.25rem;
+  height: auto;
 }
 
 .footer__copyright {
