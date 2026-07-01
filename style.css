@@ -19,8 +19,9 @@
 }
 
 /* ==========================================================================
-   GLOBAL VARIABLES
+   CSS CUSTOM PROPERTIES
    ========================================================================== */
+
 :root {
   /* Colors */
   --color-white: hsl(0, 0%, 100%);
@@ -32,7 +33,7 @@
   /* Typography Sizes */
   --size-body: 15px;
   --size-button: clamp(0.75rem, 0.3vw + 0.6rem, 0.875rem);
-  --size-title: clamp(1.5rem, 4vw + 1rem, 3.25rem);
+  --size-title: clamp(1.5rem, 4vw + 1rem, 3.75rem);
   --size-heading: clamp(1.75rem, 3vw + 1rem, 2.25rem);
   --size-creation-title: clamp(1.5rem, 2vw + 1rem, 2rem);
   --size-footer-link: clamp(0.875rem, 0.2vw + 0.8rem, 0.938rem);
@@ -46,7 +47,8 @@
   --weight-normal: 400;
 
   /* Layout Spacing (Gaps & Block Padding) */
-  --gap-section: clamp(2rem, 3.5vw + 1rem, 3.625rem);
+  --gap-section: clamp(2rem, 3.5vw + 1rem, 8rem);
+  --gap-block: clamp(2rem, 3.5vw + 1rem, 16rem);
   --gap-container-y: clamp(1rem, 1vw + 0.75rem, 1.5rem);
   --gap-container-x: clamp(1.5rem, 5vw + 0.25rem, 3.75rem);
   --gap-intro-container: clamp(3rem, 6vw + 1.5rem, 6rem);
@@ -64,10 +66,10 @@
   --pad-creation-title-l: clamp(1.25rem, 2vw + 0.75rem, 2rem);
   --pad-creation-btn-y: clamp(0.5rem, 1vw + 0.25rem, 0.75rem);
   --pad-creation-btn-x: clamp(2rem, 3vw + 1rem, 3rem);
-  --pad-footer-y: clamp(3.5rem, 6vw + 2rem, 5.5rem);
+  --pad-footer-y: clamp(3.5rem, 6vw + 2rem, 3.125rem);
 
   /* Header Dimension Variables */
-  --header-height-min: clamp(34rem, 45vw + 20rem, 40rem);
+  --header-height-min: clamp(28rem, 30vw + 15rem, 32rem);
 
   /* Effects & Transitions */
   --transition-speed: 0.2s;
@@ -154,6 +156,7 @@ li {
 .site-header {
   display: flex;
   flex-direction: column;
+  padding-block-start: 1.5rem;
   margin-inline: auto;
   color: var(--color-white);
   background-repeat: no-repeat;
@@ -215,7 +218,6 @@ li {
 }
 
 .site-nav__item a {
-  color: var(--color-white);
   text-decoration: none;
   position: relative;
   padding-bottom: 0.5rem;
@@ -269,7 +271,7 @@ h1 {
    ========================================================================== */
 
 .intro {
-  padding-block: var(--gap-section);
+  padding-block-start: var(--gap-section);
   background-color: var(--color-white);
 }
 
@@ -313,7 +315,6 @@ h1 {
   line-height: 1.7;
   margin: 0;
   color: var(--color-black);
-  opacity: 0.5;
   padding-inline: clamp(1rem, 5vw, 2rem);
 }
 
@@ -322,7 +323,7 @@ h1 {
    ========================================================================== */
 
 .creations {
-  padding-block: var(--gap-section);
+  padding-block: var(--gap-block);
 }
 
 .creations .container {
@@ -433,7 +434,6 @@ h1 {
 .footer {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding-block: var(--pad-footer-y);
   width: 100%;
 }
 
@@ -544,6 +544,11 @@ h1 {
     width: 100%;
     max-width: 90rem;
   }
+  
+  .site-header__content {
+    margin-block-start: auto;
+    margin-block-end: 4rem;
+  }
 }
 
 @media (min-width: 48rem) {
@@ -639,17 +644,28 @@ h1 {
     align-self: center;
   }
   
+  .footer {
+    padding-block: 1rem;
+  }
+
   .footer .container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
     text-align: left;
-    gap: 0;
   }
 
   .footer__left {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    gap: var(--gap-creations-grid);
+  }
+
+  .footer__logo {
+    margin-bottom: 0;
   }
 
   .footer__nav-list {
@@ -658,6 +674,10 @@ h1 {
   }
 
   .footer__right {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
   }
