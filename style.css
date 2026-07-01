@@ -35,8 +35,7 @@
   --size-body: 15px;
   --size-button: clamp(0.75rem, 0.3vw + 0.6rem, 0.75rem);
   --size-title: clamp(1.5rem, 4vw + 1rem, 3.75rem);
-  --size-heading: clamp(1.75rem, 3vw + 1rem, 1.5rem);
-  --size-creation-title: clamp(1.5rem, 2vw + 1rem, 2rem);
+  --size-heading: clamp(1.5rem, 2vw + 1rem, 2rem);
   --size-footer-link: clamp(0.875rem, 0.2vw + 0.8rem, 0.938rem);
 
   /* Font Families */
@@ -84,6 +83,11 @@
   --transition-card-overlay: background-color var(--transition-speed) ease,
     transform var(--transition-speed-slow) ease;
   --transition-card-title: color var(--transition-speed) ease;
+
+  /* Image Assets */
+  --hero-background: url("https://raw.githubusercontent.com/Kking927/loopstudios-landing-page/main/images/mobile/image-hero.jpg");
+  --icon-hamburger: url("https://raw.githubusercontent.com/Kking927/loopstudios-landing-page/main/images/icon-hamburger.svg");
+  --icon-close: url("https://raw.githubusercontent.com/Kking927/loopstudios-landing-page/main/images/icon-close.svg");
 }
 
 /* ==========================================================================
@@ -164,7 +168,7 @@ li {
   background-size: cover;
   background-position: top center;
   min-height: var(--header-height-min);
-  background-image: url("https://raw.githubusercontent.com/Kking927/loopstudios-landing-page/main/images/mobile/image-hero.jpg");
+  background-image: var(--hero-background);
 }
 
 .site-header .container {
@@ -188,6 +192,26 @@ li {
   display: block;
   cursor: pointer;
   z-index: 20;
+  width: 24px;
+  height: 16px;
+  background-image: var(--icon-hamburger);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.menu-toggle:hover {
+  opacity: 0.6;
+}
+
+.menu-checkbox:checked ~ .menu-toggle {
+  background-image: var(--icon-close);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
 }
 
 .site-nav {
@@ -401,7 +425,7 @@ h1 {
   bottom: var(--pad-creation-title-b);
   left: var(--pad-creation-title-l);
   z-index: 2;
-  font-size: var(--size-creation-title);
+  font-size: var(--size-heading);
   font-family: var(--ff-josefin);
   font-weight: var(--weight-light);
   color: var(--color-white);
