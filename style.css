@@ -34,8 +34,8 @@
   /* Typography Sizes */
   --size-body: 15px;
   --size-button: clamp(0.75rem, 0.3vw + 0.6rem, 0.75rem);
-  --size-title: clamp(1.5rem, 4vw + 1rem, 3.75rem);
-  --size-heading: clamp(1.5rem, 2vw + 1rem, 2rem);
+  --size-title: clamp(1.5rem, 4vw + 1rem, 3.5rem);
+  --size-heading: clamp(1.5rem, 2vw + 1rem, 2.5rem);
   --size-footer-link: clamp(0.875rem, 0.2vw + 0.8rem, 0.938rem);
 
   /* Font Families */
@@ -59,7 +59,7 @@
   --gap-footer-nav: clamp(1.5rem, 2vw + 1rem, 2rem);
 
   /* Component Padding & Positioning */
-  --pad-header-title: clamp(0.75rem, 2vw + 0.5rem, 2.5rem);
+  --pad-header-title: clamp(1.25rem, 2vw + 0.5rem, 2rem);
   --pad-intro-content-t: clamp(0rem, 12vw - 2.5rem, 6rem);
   --pad-intro-content-l: clamp(0rem, 12vw - 2.5rem, 6rem);
   --pad-creation-title-b: clamp(1.25rem, 2vw + 0.75rem, 2rem);
@@ -148,7 +148,7 @@ li {
 
 .container {
   width: 100%;
-  max-width: 62.5rem;
+  max-width: 65rem;
   margin: 0 auto;
   padding: var(--gap-container-y) var(--gap-container-x);
   box-sizing: border-box;
@@ -278,15 +278,21 @@ li {
   pointer-events: auto;
 }
 
+.site-header__content {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
+  display: inline-block;
+  max-width: 11ch;
+  width: fit-content;
   color: var(--color-white);
   font-weight: var(--weight-light);
   font-size: var(--size-title);
-  line-height: 1.1;
+  line-height: 1;
   text-transform: uppercase;
   text-align: left;
-  margin-inline: auto;
-  max-width: 10ch;
   border: 2px solid;
   padding: var(--pad-header-title);
 }
@@ -297,7 +303,6 @@ h1 {
 
 .intro {
   padding-block-start: var(--gap-section);
-  background-color: var(--color-white);
 }
 
 .intro .container {
@@ -461,7 +466,7 @@ h1 {
   background-color: var(--color-black);
   color: var(--color-white);
   width: 100%;
-  max-width: 62.5rem;
+  max-width: 65rem;
   margin-inline: auto;
 }
 
